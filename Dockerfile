@@ -10,4 +10,8 @@ VOLUME /root/.bitcore
 
 EXPOSE 3001
 
+COPY ./entrypoint.sh /
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["bitcored"]
